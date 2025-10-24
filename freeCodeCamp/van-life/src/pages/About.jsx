@@ -13,7 +13,7 @@ export default function About() {
                     <p>Our team is full of vanlife enthusiasts who know firsthand the magic of touring the world on 4 wheels.</p>
                 </div>
             </div>
-            <div className="van-explore">
+            <div className="vans-explore">
                 <p>Your destination is waiting. Your van is ready.</p>
                 <button>Explore our vans</button>
             </div>
