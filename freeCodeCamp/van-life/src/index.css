@@ -1,0 +1,193 @@
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.body-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* overflow: hidden; */
+}
+
+main {
+  flex: 1;
+}
+
+nav {
+  background-color: #FFF7ED;
+  min-height: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0 26px;
+}
+
+nav a:hover,
+nav a:active,
+nav a:visited {
+  color: inherit;
+}
+
+
+nav a.brand-name {
+  font-size: 25px;
+  font-weight: 900;
+}
+
+nav a.menu-list {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4D4D4D;
+}
+
+footer {
+  width: 100%;
+  height: 75px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #252525;
+  color: #AAAAAA;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+footer p::first-letter {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  font-weight: 200;
+}
+
+.home-page {
+  flex: 1;
+  position: relative;
+  height: calc(100vh - 110px - 75px);
+  overflow: hidden;
+  background-color: #FFF7ED;
+}
+
+.hero {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  /* background: rgba(0, 0, 0, 0.1); */
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+
+.hero .overlay .main-text {
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.hero .overlay .sub-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.hero .overlay button {
+  background-color: #FF8C38;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 500px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.hero button:hover {
+  background-color: #ff9244;
+}
+
+.hero button:active {
+  /* transform: scale(0.999); */
+  background-color: #ff862f;
+}
+
+.about-page {
+  flex: 1;
+  background-color: #FFF7ED;
+  overflow-y: auto;
+  padding-bottom: 50px;
+}
+
+/* .about-body {
+  position: relative;
+  width: 100%;
+} */
+
+.about-body img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-body .title {
+  font-weight: 700;
+  font-size: 32px;
+  color: #161616;
+  margin: 50px 26px 26px 26px
+}
+
+.about-body p {
+  font-weight: 500;
+  font-size: 16px;
+  color: #161616;
+  margin: 26px;
+}
+
+.van-explore {
+  background-color: #FFCC8D;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 50px 26px;
+}
+
+.van-explore p {
+  font-weight: 700;
+  font-size: 24px;
+  color: #161616;
+}
+
+.van-explore button {
+  width: 175px;
+  height: 50px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: #161616;
+  color: white;
+}
