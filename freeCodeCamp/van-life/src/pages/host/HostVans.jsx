@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { PacmanLoader } from 'react-spinners';
 
 export default function HostVans() {
     const [vans, setVans] = useState([]);
@@ -19,7 +20,7 @@ export default function HostVans() {
     return (
         <div className="hostvans-container">
             <h1>Your listed vans</h1>
-            {vans.map(van =>
+            {vans.length > 0 ? vans.map(van =>
                 <Link to={`/host/vans/${van.id}`} className="hostvans-item" key={van.id}>
                     <img src={van.imageUrl} />
                     <div>
@@ -27,7 +28,8 @@ export default function HostVans() {
                         <p>${van.price}/day</p>
                     </div>
                 </Link>
-            )}
+            )
+                : <div className='data-loading'><PacmanLoader color="#E17654" size={40} /></div>}
         </div>
     )
 }
