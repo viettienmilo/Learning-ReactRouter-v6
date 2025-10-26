@@ -28,20 +28,25 @@ main {
 nav {
   min-height: 110px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  color: #4D4D4D;
+  margin: 0 26px;
+}
+
+nav.nav-main {
+  justify-content: space-between;
 }
 
 nav a {
   text-decoration: none;
   cursor: pointer;
-  margin: 0 26px;
+  margin: 0 26px 0 0;
 }
 
 nav a:hover,
-nav a:active,
 nav a:visited {
   color: inherit;
+  text-decoration: underline;
 }
 
 
@@ -50,12 +55,18 @@ nav a.brand-name {
   font-weight: 900;
 }
 
-nav a.menu-list {
+nav a.navlink-item {
   font-size: 16px;
   font-weight: 600;
-  color: #4D4D4D;
+
   margin-left: 0 !important;
   margin-right: 26px !important;
+}
+
+nav a.navlink-item-active {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #161616
 }
 
 footer {
@@ -382,4 +393,46 @@ i[class*='van-type'] {
   align-items: center;
   background-color: transparent;
   z-index: 9999;
+}
+
+/* HOST VANS */
+.hostvans-container {
+  margin-left: 26px;
+}
+
+.hostvans-container h1 {
+  font-weight: 700;
+  font-size: 32px;
+  color: #161616;
+  display: flex;
+  /* flex-direction: column; */
+}
+
+.hostvans-item {
+  display: flex;
+  text-decoration: none;
+  background-color: white;
+  color: inherit;
+  padding: 26px;
+  margin-bottom: 20px;
+  margin-right: 26px;
+
+}
+
+.hostvans-item img {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.hostvans-item h3 {
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0 0 0 12px;
+}
+
+.hostvans-item p {
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0 0 0 12px;
+  color: #4D4D4D;
 }

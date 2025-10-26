@@ -6,26 +6,33 @@ import Vans from './pages/Vans.jsx';
 import VanDetail from './pages/VanDetail.jsx';
 import "./server.js"
 import Layout from './components/Layout.jsx';
+import HostLayout from './components/HostLayout.jsx';
+import Dashboard from './pages/host/Dashboard.jsx';
+import Income from './pages/host/Income.jsx';
+import HostVans from './pages/host/HostVans.jsx';
+import HostVanDetail from './pages/host/HostVanDetail.jsx';
+import Reviews from './pages/host/Reviews.jsx';
 
 export default function App() {
 
   return (
     <BrowserRouter>
       <div className='body-container'>
-        <main>
-          <Routes>
-            <Route element={<Layout />}>
-              <Route path='/' element={<Home />} />
-              <Route path='/about' element={<About />} />
-              <Route path='/vans' element={<Vans />} />
-              <Route path='/vans/:id' element={<VanDetail />} />
+        <Routes>
+          <Route path='/' element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path='about' element={<About />} />
+            <Route path='vans' element={<Vans />} />
+            <Route path='vans/:id' element={<VanDetail />} />
+            <Route path='host' element={<HostLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path='income' element={<Income />} />
+              <Route path='vans' element={<HostVans />} />
+              <Route path='vans/:id' element={<HostVanDetail />} />
+              <Route path='reviews' element={<Reviews />} />
             </Route>
-          </Routes>
-        </main>
-
-        <footer>
-          <p>© 2025 #VANLIFE</p>
-        </footer>
+          </Route>
+        </Routes>
       </div>
     </BrowserRouter >
   )

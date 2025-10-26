@@ -7,7 +7,7 @@ export default function VanDetail() {
     const [van, setVan] = useState(null);
 
     useEffect(() => {
-        fetch(`/api/vans/${id}/`)
+        fetch(`/api/vans/${id}`)
             .then(res => res.json())
             .then(data => setVan(data.vans))
     }, [id]);
