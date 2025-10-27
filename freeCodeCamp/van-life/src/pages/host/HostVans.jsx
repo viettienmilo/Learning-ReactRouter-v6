@@ -21,7 +21,7 @@ export default function HostVans() {
         <div className="hostvans-container">
             <h1>Your listed vans</h1>
             {vans.length > 0 ? vans.map(van =>
-                <Link to={`/host/vans/${van.id}`} className="hostvans-item" key={van.id}>
+                <Link to={van.id} className="hostvans-item" key={van.id}>
                     <img src={van.imageUrl} />
                     <div>
                         <h3>{van.name}</h3>

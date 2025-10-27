@@ -18,7 +18,6 @@ body::-webkit-scrollbar {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* overflow: hidden; */
 }
 
 main {
@@ -220,7 +219,6 @@ footer p::first-letter {
 .van-list-container p {
   font-size: 32px;
   font-weight: 700;
-  padding-top: 50px;
 }
 
 .van-filter button {
@@ -237,14 +235,17 @@ footer p::first-letter {
 .van-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-items: center;
+  justify-items: stretch;
   gap: 34px;
   margin-top: 57px;
 }
 
-.van-tile {
+.van-tile a {
   color: #161616;
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .van-tile img {
@@ -254,8 +255,8 @@ footer p::first-letter {
 
 .van-info {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  vertical-align: center;
 }
 
 .van-info h3,
@@ -269,15 +270,16 @@ footer p::first-letter {
   font-weight: 500;
 }
 
-.van-list-container button {
+/* .van-list-container button {
   margin-right: 20px;
   cursor: pointer;
-}
+} */
 
 .van-type,
 .van-type-sm {
   height: 34px;
   padding: 6px 26px;
+  margin-right: 10px;
   font-style: normal;
   font-weight: 500;
   border: none;
@@ -285,6 +287,7 @@ footer p::first-letter {
   background-color: #FFEAD0;
   color: #4D4D4D;
   transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
 }
 
 .van-type:hover,
@@ -323,18 +326,18 @@ footer p::first-letter {
   background-color: #161616;
 }
 
-.van-type.clear-filters,
-.van-type-sm.clear-filters {
-  margin-left: -20px;
-  height: 34px;
-  padding: 6px 26px;
+.van-type.clear-filters {
+  height: 37px;
+  width: 120px;
+  padding: 6px 6px;
   font-style: normal;
   font-weight: 500;
   border: none;
-  border-radius: 5px;
-  text-decoration: underline;
   background-color: transparent;
+  text-decoration: underline;
   color: #4D4D4D;
+  justify-content: stretch;
+  cursor: pointer;
 }
 
 i[class*='van-type'] {
