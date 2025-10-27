@@ -39,6 +39,8 @@ nav.nav-main {
 
 nav.hot-van-nav {
   font-size: 16px;
+  /* margin: 0px !important;
+  padding: 0px !important; */
 }
 
 nav a {
@@ -484,7 +486,7 @@ a.link-back:visited {
 .hostvan-detail {
   background-color: white;
   margin: 50px 0px;
-  padding: 26px;
+  /* padding: 26px; */
   font-size: 15px;
   font-weight: 500;
 }
@@ -492,6 +494,7 @@ a.link-back:visited {
 .hostvan-detail .header {
   display: flex;
   align-items: center;
+  padding: 26px;
 }
 
 .hostvan-detail .header img {
@@ -507,4 +510,14 @@ a.link-back:visited {
 
 .hostvan-detail .header p {
   font-size: 20px;
+}
+
+.hostvan-detail .body {
+  margin-top: -26px;
+  padding-left: 26px;
+  padding-bottom: 50px;
+}
+
+.hostvan-detail .body p {
+  text-transform: capitalize;
 }

@@ -34,7 +34,7 @@ export default function HostVanDetail() {
                         <NavLink to='photos' className={({ isActive }) => isActive ? "navlink-item-active" : null}>
                             Photos</NavLink>
                     </nav>
-                    <Outlet />
+                    <Outlet context={{ van }} />
                 </div>
                 : <div className='data-loading'><PacmanLoader color="#E17654" size={40} /></div>
             }
