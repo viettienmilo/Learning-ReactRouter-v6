@@ -1,5 +1,5 @@
 export default function Income() {
     return (
-        <h1>Income Page</h1>
+        <h1 className="hostvans-container">Income Page</h1>
     )
 }

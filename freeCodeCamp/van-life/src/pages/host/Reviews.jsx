@@ -1,5 +1,5 @@
 export default function Reviews() {
     return (
-        <h1>Reviews Page</h1>
+        <h1 className="hostvans-container">Reviews Page</h1>
     )
 }

@@ -1,26 +1,21 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+
+import { Link, useLoaderData } from "react-router-dom";
 import { PacmanLoader } from 'react-spinners';
+import { getHostVans } from './../../api.js';
+import { requireAuth } from './../../utils.js';
+
+export async function loader({ request }) {
+    await requireAuth(request);
+    return getHostVans();
+}
 
 export default function HostVans() {
-    const [vans, setVans] = useState([]);
-    useEffect(() => {
-        const cached = localStorage.getItem("hostvans");
-        if (cached) setVans(JSON.parse(cached));
-        else {
-            fetch("/api/host/vans")
-                .then(res => res.json())
-                .then(data => {
-                    setVans(data.vans);
-                    localStorage.setItem("hostvans", JSON.stringify(data.vans));
-                })
-        }
-    }, [])
+    const vans = useLoaderData();
 
     return (
         <div className="hostvans-container">
             <h1>Your listed vans</h1>
-            {vans.length > 0 ? vans.map(van =>
+            {vans.map(van =>
                 <Link to={van.id} className="hostvans-item" key={van.id}>
                     <img src={van.imageUrl} />
                     <div>
@@ -28,8 +23,7 @@ export default function HostVans() {
                         <p>${van.price}/day</p>
                     </div>
                 </Link>
-            )
-                : <div className='data-loading'><PacmanLoader color="#E17654" size={40} /></div>}
+            )}
         </div>
     )
 }

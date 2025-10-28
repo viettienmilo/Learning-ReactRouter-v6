@@ -36,6 +36,7 @@ nav.nav-main {
   justify-content: space-between;
 }
 
+
 nav.hot-van-nav {
   font-size: 16px;
   /* margin: 0px !important;
@@ -62,15 +63,17 @@ nav a.brand-name {
   text-decoration: none;
 }
 
-/* nav a.navlink-item {
-  font-size: 16px;
-  font-weight: 600;
+.navlink-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  margin-left: 0 !important;
-  margin-right: 26px !important;
-} */
+.navlink-item img {
+  padding-top: 4px;
+}
 
-nav a.navlink-item-active {
+.navlink-item-active {
   font-weight: bold;
   text-decoration: underline;
   color: #161616
@@ -523,4 +526,43 @@ a.link-back:visited {
 
 .hostvan-detail .body p {
   text-transform: capitalize;
+}
+
+.login-form,
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+
+}
+
+.login-form form input {
+  width: 474px;
+  height: 42px;
+  border-radius: 6px;
+  border: 1px solid gray;
+  padding: 2px 13px;
+  font-size: 16px;
+  font-weight: 400;
+  color: black
+}
+
+.login-form button {
+  width: 500px;
+  height: 55px;
+  margin-top: 26px;
+  border-radius: 6px;
+  border: 1px solid #FF8C38;
+
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  background-color: #FF8C38;
 }
