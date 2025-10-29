@@ -1,30 +1,38 @@
-import { Link, useLocation, useLoaderData } from 'react-router-dom';
-// import { useState, useEffect } from 'react';
-import { PacmanLoader } from 'react-spinners';
+import { Link, useLocation, useLoaderData, Await } from 'react-router-dom';
+import { Suspense } from 'react';
 import { getVans } from './../api.js';
+import { PacmanLoader } from 'react-spinners';
 
 export async function loader({ params }) {
     const { id } = params;
-    return getVans(id);
+    return { van: getVans(id) };
 }
 
 export default function VanDetail() {
-    const van = useLoaderData();
+    const { van } = useLoaderData();
     const { state: { search, type } } = useLocation();
 
     return (
         <div className='van-detail-container'>
-            <Link to={`..${search ? `?${search}` : ''}`}
-                relative='path'
-                className="link-back">&larr;  Back to {type ? type : "all"} vans</Link>
-            <div className='van-detail'>
-                <img src={van.imageUrl} alt={van.name} />
-                <i className={`van-type ${van.type} selected`}>{van.type}</i>
-                <h2>{van.name}</h2>
-                <p className='van-price'>${van.price}<span>/day</span></p>
-                <p>{van.description}</p>
-                <button className='link-button'>Rent this van</button>
-            </div>
+            <Suspense fallback={<div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}><PacmanLoader size={20} color="#ffa938ff" /></div>}>
+                <Await resolve={van}>
+                    {(loadedVan) => (
+                        <>
+                            <Link to={`..${search ? `?${search}` : ''}`}
+                                relative='path'
+                                className="link-back">&larr;  Back to {type ? type : "all"} vans</Link>
+                            <div className='van-detail'>
+                                <img src={loadedVan.imageUrl} alt={loadedVan.name} />
+                                <i className={`van-type ${loadedVan.type} selected`}>{van.type}</i>
+                                <h2>{loadedVan.name}</h2>
+                                <p className='van-price'>${loadedVan.price}<span>/day</span></p>
+                                <p>{loadedVan.description}</p>
+                                <button className='link-button'>Rent this van</button>
+                            </div>
+                        </>
+                    )}
+                </Await>
+            </Suspense>
         </div>
     );
 }

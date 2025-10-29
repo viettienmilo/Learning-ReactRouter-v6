@@ -1,6 +1,5 @@
 import { createServer, Model, Response } from "miragejs"
 
-
 createServer({
     models: {
         vans: Model,
@@ -23,7 +22,7 @@ createServer({
         // this.timing = 2000
 
         this.get("/vans", (schema, request) => {
-            // return new Response(400, {}, {error: "Error fetching data"})
+            // return new Response(400, {}, { error: "Error fetching data" })
             return schema.vans.all()
         })
 
