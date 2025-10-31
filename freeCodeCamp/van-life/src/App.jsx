@@ -19,7 +19,8 @@ import Error from './components/Error.jsx';
 import Login, { loader as loginLoader, action as loginAction } from './pages/Login.jsx';
 import { requireAuth } from './utils.js';
 
-// localStorage.removeItem("loggedin")
+localStorage.removeItem("loggedin")  // fake log out by clear isLoggedIn in localStorage each time refresh browser
+
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<Layout />} >
     <Route index element={<Home />} />
